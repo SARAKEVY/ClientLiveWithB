@@ -1,0 +1,39 @@
+<p>login works!</p>
+<form (submit)="login()">
+  <input type="text" [(ngModel)]="username" name="username" placeholder="Username">
+  <input type="password" [(ngModel)]="password" name="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+<form>
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+    <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="telephone">Telephone:</label>
+    <input type="text" class="form-control" id="telephone" [(ngModel)]="user.telephone" name="telephone">
+  </div>
+  <div class="form-group">
+    <label for="isActive">Is Active:</label>
+    <input type="checkbox" class="form-check-input" id="isActive" [(ngModel)]="user.isActive" name="isActive">
+  </div>
+  <div class="form-group">
+    <label for="isConfirmSms">Is Confirm SMS:</label>
+    <input type="checkbox" class="form-check-input" id="isConfirmSms" [(ngModel)]="user.isConfirmSms" name="isConfirmSms">
+  </div>
+  <div class="form-group">
+    <label for="isConfirmEmail">Is Confirm Email:</label>
+    <input type="checkbox" class="form-check-input" id="isConfirmEmail" [(ngModel)]="user.isConfirmEmail" name="isConfirmEmail">
+  </div>
+  <!-- Additional fields like stores, cell plan, etc. can be added here -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

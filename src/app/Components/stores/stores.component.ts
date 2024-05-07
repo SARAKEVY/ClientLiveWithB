@@ -12,7 +12,7 @@ export class StoresComponent {
 
   }
 
-  stores:Store[]=[]
+  stores: Store[] = [];
   ngOnInit():void {
     this.storesService.getAllStores().subscribe(s => { this.stores = s, console.log(s) });
   }
