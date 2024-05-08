@@ -16,7 +16,7 @@ export class AuthService {
     // Remove token from local storage or wherever it's stored
   }
 
-  isLoggedIn(): ean {
+  isLoggedIn(): boolean {
     // Check if token exists and if it's valid
     return !!localStorage.getItem('token');
   }

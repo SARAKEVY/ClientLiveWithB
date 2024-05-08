@@ -8,9 +8,7 @@ import { Component,OnInit } from '@angular/core';
   styleUrls: ['./stores.component.css']
 })
 export class StoresComponent {
-  constructor( private storesService:StoresService) {
-
-  }
+  constructor( private storesService:StoresService) {}
 
   stores: Store[] = [];
   ngOnInit():void {
