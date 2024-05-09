@@ -1,3 +1,4 @@
+import { Status } from './../../MOdeles/Status.modele';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -10,6 +11,9 @@ import { StoresService } from 'src/app/Services/stores.service';
   styleUrls: ['./add-store.component.css']
 })
 export class AddStoreComponent {
+  active:boolean=false
+statuses:Status[]=[]
+  all:[]=[]
   myConection: AddConection={
     email: '',
     telephone: '',
@@ -21,6 +25,15 @@ export class AddStoreComponent {
   constructor( private http: HttpClient,private storesService:StoresService, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.http.get<Status[]>('https://localhost:7169' + '/api/Status').subscribe({
+
+      next: res => {
+        this.statuses = res;
+      },
+      error:error=>{}
+
+    })
+
     // this.storesService.AddConection()
     this.connectionForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -51,23 +64,45 @@ export class AddStoreComponent {
       this.myConection.secondTelephone = this.connectionForm.value.secondTelephone;
 
       console.log(this.myConection);
-        // http.post('your-api-url/create-connection', formData)
         this.http.post<AddConection>('https://localhost:7169'+'/api/Conection',this.myConection)
-      // this.storesService.AddConection(this.myConection)
-        .subscribe(response => {
-          // Handle success
-          console.log('Connection created successfully:', response);
-          // Optionally, reset the form
-          this.connectionForm.reset();
-        }, error => {
-          // Handle error
-          console.error('Error creating connection:', error);
+          .subscribe({
+            next: response => {
+              // Handle success
+              console.log('Connection created successfully:', response);
+              // Optionally, reset the form
+              this.connectionForm.reset();
+            }, error: error => {
+              // Handle error
+              console.error('Error creating connection:', error);
 
-        });
+            }
+          });
     } else {
-      // Form is invalid, mark fields as touched to display validation errors
       this.connectionForm.markAllAsTouched();
       console.log("ffffffffff")
+
+
+
     }
+  //   const status = {
+  //     "type": "angularstatus22",
+  //     "cellPlans":[]
+  //   }
+  //   console.log("status"+status.type)
+
+  //   this.http.post<any>('https://localhost:7169/api/Status', status).subscribe({
+  //     next: response => {
+  //         console.log('Status created successfully:', response);
+  //     },
+  //     error: error => {
+  //         console.error('Error creating status:', error);
+  //     }
+  // });
+  //   console.log('this.status'+status)
+
+
+
+
   }
-   }
+  }
+

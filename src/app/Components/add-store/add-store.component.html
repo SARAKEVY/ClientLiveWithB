@@ -22,7 +22,7 @@
     <input type="checkbox" id="isConfirmEmail" formControlName="isConfirmEmail">
   </div>
   <!-- Address Fields -->
-  <div>
+  <!-- <div>
     <label for="city">City:</label>
     <input type="text" id="city" formControlName="city">
   </div>
@@ -45,6 +45,23 @@
   <div>
     <label for="street">Street:</label>
     <input type="text" id="street" formControlName="street">
-  </div>
+  </div> -->
   <button type="submit">Submit</button>
 </form>
+
+<button type="button" class="collapsible" (onclick)="active=!active">Open Collapsible</button>
+<div class="content"  >
+  <div *ngFor="let item of statuses"  >
+    {{ item.type }}
+  </div>
+</div>
+
+
+<!-- <div class="selection-view">
+  <div class="scrollable-container">
+    <div *ngFor="let item of statuses"  >
+      {{ item.type }}
+    </div>
+  </div>
+</div> -->
+<ul *ngFor="let c of all"><li>{{all}}</li></ul>
