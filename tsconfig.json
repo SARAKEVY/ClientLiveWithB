@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "esModuleInterop": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -23,12 +24,13 @@
       "ES2022",
       "dom"
     ],
-    "esModuleInterop": true,
+
     "typeRoots": [
       "node_modules/@types"
     ]
   },
   "angularCompilerOptions": {
+
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

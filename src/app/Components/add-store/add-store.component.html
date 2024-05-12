@@ -1,0 +1,67 @@
+<p>add-store works!</p>
+<h4>Add Conection</h4>
+<form [formGroup]="connectionForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email">
+  </div>
+  <div>
+    <label for="telephone">Telephone:</label>
+    <input type="tel" id="telephone" formControlName="telephone">
+  </div>
+  <div>
+    <label for="secondTelephone">Second Telephone:</label>
+    <input type="tel" id="secondTelephone" formControlName="secondTelephone">
+  </div>
+  <div>
+    <label for="isConfirmSms">Confirm SMS:</label>
+    <input type="checkbox" id="isConfirmSms" formControlName="isConfirmSms">
+  </div>
+  <div>
+    <label for="isConfirmEmail">Confirm Email:</label>
+    <input type="checkbox" id="isConfirmEmail" formControlName="isConfirmEmail">
+  </div>
+  <!-- Address Fields -->
+  <!-- <div>
+    <label for="city">City:</label>
+    <input type="text" id="city" formControlName="city">
+  </div>
+  <div>
+    <label for="houseNumber">House Number:</label>
+    <input type="text" id="houseNumber" formControlName="houseNumber">
+  </div>
+  <div>
+    <label for="familyDoor">Family at the Door:</label>
+    <input type="text" id="familyDoor" formControlName="familyDoor">
+  </div>
+  <div>
+    <label for="floor">Floor:</label>
+    <input type="text" id="floor" formControlName="floor">
+  </div>
+  <div>
+    <label for="entrance">Entrance:</label>
+    <input type="text" id="entrance" formControlName="entrance">
+  </div>
+  <div>
+    <label for="street">Street:</label>
+    <input type="text" id="street" formControlName="street">
+  </div> -->
+  <button type="submit">Submit</button>
+</form>
+
+<button type="button" class="collapsible" (onclick)="active=!active">Open Collapsible</button>
+<div class="content"  >
+  <div *ngFor="let item of statuses"  >
+    {{ item.type }}
+  </div>
+</div>
+
+
+<!-- <div class="selection-view">
+  <div class="scrollable-container">
+    <div *ngFor="let item of statuses"  >
+      {{ item.type }}
+    </div>
+  </div>
+</div> -->
+<ul *ngFor="let c of all"><li>{{all}}</li></ul>
