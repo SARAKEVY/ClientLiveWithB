@@ -7,6 +7,7 @@ import { StoresComponent } from './Components/stores/stores.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './Authentication/login/login.component';
 import { AddStoreComponent } from './Components/add-store/add-store.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AddStoreComponent } from './Components/add-store/add-store.component';
     StoresComponent,
     LoginComponent,
     AddStoreComponent,
+    HomePageComponent,
   ],
   imports: [
      BrowserModule,

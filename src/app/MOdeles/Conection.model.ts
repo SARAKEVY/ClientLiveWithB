@@ -1,4 +1,4 @@
-export interface AddConection {
+export interface Conection {
   email: string,
   telephone: string,
   secondTelephone: string,

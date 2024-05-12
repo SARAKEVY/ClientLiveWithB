@@ -1,6 +1,10 @@
 
 export interface Status{
-  id:string,
+  statusId:string,
   type: string,
-  cellplans:[]
+  cellPlans: [],
+  "locations": [],
+  "products": [],
+  "stores": [],
+  "users": []
 }

@@ -48,20 +48,24 @@
   </div> -->
   <button type="submit">Submit</button>
 </form>
+Choose status :
+<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" >
+  <option *ngFor="let item of statuses" [value]="item.statusId">{{item.type}}</option>
+</select>
+<br>
+<br>
+Choose categorie :
 
-<button type="button" class="collapsible" (onclick)="active=!active">Open Collapsible</button>
-<div class="content"  >
-  <div *ngFor="let item of statuses"  >
-    {{ item.type }}
-  </div>
-</div>
+<select [(ngModel)]="selectCategorie" (ngModelChange)="onSelect2($event)" >
+  <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
+</select>
+<br>
+<br>
+<!-- Choose categories
 
-
-<!-- <div class="selection-view">
-  <div class="scrollable-container">
-    <div *ngFor="let item of statuses"  >
-      {{ item.type }}
-    </div>
-  </div>
-</div> -->
+<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" >
+  <option *ngFor="let item of statuses" [value]="item.statusId">{{item.type}}</option>
+</select> -->
+<br>
+<br>
 <ul *ngFor="let c of all"><li>{{all}}</li></ul>

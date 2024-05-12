@@ -1,16 +1,30 @@
+import { Categorie } from "./Categorie.model";
+import { Conection } from "./Conection.model";
+import { Status } from "./Status.modele";
+import { User } from "./User.model";
+
  export interface Store{
-  storeId:string,
           name:string,
          logo:string,
          statusId:string,
-   status:{}
+      status:Status
          description:string,
           userId:string,
-           user:{},
+           user:User,
           categorieId:string,
-          categorie:{},
+           categorie:Categorie,
           createdDate:Date,
        isShipping:boolean,
-          conectionId:string,
-           conection:{}
+       email: string,
+       telephone: string,
+       secondTelephone: string,
+       isConfirmSms: boolean,
+   isConfirmEmail: boolean,
+   city: string,
+
+   houseNumber: string,
+   familyDoor: string,
+   floor: string,
+   entrance: string,
+   street: string
 }
