@@ -1,17 +1,34 @@
-export interface User{
-UserId:string,
-  firstName:string,
-   lastName: string,
-    CreatedDate:Date
-  email:string,
-  telephon:string,
-  isActive:boolean,
+import { Guid } from "guid-typescript";
 
-   statusId:string,
-  Status: {},
-   cellPlanId:string,
-  cellPlan:{},
-  stores:[],
-  isConfirmSms:boolean,
-  isConfirmEmail:boolean,
-}
+// export interface IUser{
+// UserId:Guid|undefined,
+//   firstName:string,
+//    lastName: string,
+//     CreatedDate:Date
+//   email:string,
+//   telephon:string,
+//   isActive:boolean,
+
+//    statusId:string,
+//   Status: {},
+//    cellPlanId:string,
+//   cellPlan:{},
+//   stores?:[],
+//   isConfirmSms:boolean,
+//   isConfirmEmail:boolean,
+// }
+export class User{
+  userId:Guid|undefined;
+  firstName:string|undefined;
+  lastName:string|undefined;
+  createdDate:Date|undefined;
+  email:string|undefined;
+  telephon?:string;
+  isActive:boolean|undefined;
+  status:Status|undefined;
+  cellPlan:CellPlan|undefined;
+  stores?:Array<Store>;
+  isConfirmSms:boolean|undefined;
+  isConfirmEmail:boolean|undefined;
+
+  }

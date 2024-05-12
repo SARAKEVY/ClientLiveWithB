@@ -1,4 +1,28 @@
-<p>login works!</p>
+
+
+<body>
+  <div class="box">
+    <form autocomplete="off">
+      <h2>התחברות</h2>
+      <div class="inputBox">
+        <input type="text" required="required" [(ngModel)]="username" name="username">
+        <span>Username</span>
+        <i></i>
+      </div>
+      <div class="inputBox">
+        <input type="password" required="required" [(ngModel)]="password" name="password" placeholder="Password">
+        <span>Password</span>
+        <i></i>
+      </div>
+      <div class="links">
+        <a href="#">שכחת סיסמא? </a>
+        <a href="#">משתמש חדש</a>
+      </div>
+      <input type="submit" (click)="login()" value="Login">
+    </form>
+  </div>
+</body>
+<!-- <p>login works!</p>
 <form (submit)="login()">
   <input type="text" [(ngModel)]="username" name="username" placeholder="Username">
   <input type="password" [(ngModel)]="password" name="password" placeholder="Password">
@@ -19,7 +43,7 @@
   </div>
   <div class="form-group">
     <label for="telephone">Telephone:</label>
-    <input type="text" class="form-control" id="telephone" [(ngModel)]="user.telephone" name="telephone">
+    <input type="text" class="form-control" id="telephone" [(ngModel)]="user.telephon" name="telephone">
   </div>
   <div class="form-group">
     <label for="isActive">Is Active:</label>
@@ -27,13 +51,15 @@
   </div>
   <div class="form-group">
     <label for="isConfirmSms">Is Confirm SMS:</label>
-    <input type="checkbox" class="form-check-input" id="isConfirmSms" [(ngModel)]="user.isConfirmSms" name="isConfirmSms">
+    <input type="checkbox" class="form-check-input" id="isConfirmSms" [(ngModel)]="user.isConfirmSms"
+      name="isConfirmSms">
   </div>
   <div class="form-group">
     <label for="isConfirmEmail">Is Confirm Email:</label>
-    <input type="checkbox" class="form-check-input" id="isConfirmEmail" [(ngModel)]="user.isConfirmEmail" name="isConfirmEmail">
   </div>
-  <!-- Additional fields like stores, cell plan, etc. can be added here -->
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <input type="checkbox" class="form-check-input" id="isConfirmSms" [(ngModel)]="user.isConfirmSms" name="isConfirmSms"
+    required>
 
+  Additional fields like stores, cell plan, etc. can be added here 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->

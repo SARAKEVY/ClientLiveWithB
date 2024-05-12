@@ -6,11 +6,15 @@ import { LoginComponent } from './Authentication/login/login.component';
 const routes: Routes = [
   {
     path: 'stores',
-    component:StoresComponent
+    component: StoresComponent
   },
   {
     path: '',
-    component:LoginComponent
+    component: LoginComponent
+  },
+  {
+    path: 'app-login',
+    component: LoginComponent
   }
 ];
 
