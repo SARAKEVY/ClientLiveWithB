@@ -7,7 +7,7 @@ import { AddStoreComponent } from './Components/add-store/add-store.component';
 const routes: Routes = [
   {
     path: 'stores',
-    component:StoresComponent
+    component: StoresComponent
   },
   {
     path: '',

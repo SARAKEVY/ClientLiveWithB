@@ -1,9 +1,4 @@
-.container {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+body{
+  background: #23242a !important;
 }
 
-.form-group {
-  margin-bottom: 10px;
-}
