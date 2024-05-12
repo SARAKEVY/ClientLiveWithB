@@ -9,8 +9,6 @@ export interface User{
     email: string,
     telephon: string,
     isActive: boolean,
-  statusId: string,
-    // status: Status,
     cellPlanId: string,
     isConfirmSms: boolean,
   isConfirmEmail: boolean,

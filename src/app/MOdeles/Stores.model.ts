@@ -1,5 +1,5 @@
+import { Guid } from "guid-typescript";
 import { Categorie } from "./Categorie.model";
-import { Conection } from "./Conection.model";
 import { Status } from "./Status.modele";
 import { User } from "./User.model";
 
@@ -7,12 +7,11 @@ import { User } from "./User.model";
           name:string,
          logo:string,
          statusId:string,
-      status:Status
+      // status:Status
          description:string,
           userId:string,
-           user:User,
           categorieId:string,
-           categorie:Categorie,
+          //  categorie:Categorie,
           createdDate:Date,
        isShipping:boolean,
        email: string,

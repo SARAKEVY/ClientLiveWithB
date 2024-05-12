@@ -7,7 +7,7 @@ import { StoresComponent } from './Components/stores/stores.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Authentication/login/login.component';
 import { AddStoreComponent } from './Components/add-store/add-store.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
+import { HomePageComponent } from './Components/home-page/home-page.component';
 import { UserPipe } from './pipes/user.pipe'
 
 @NgModule({
@@ -17,6 +17,7 @@ import { UserPipe } from './pipes/user.pipe'
     LoginComponent,
     UserPipe,
     HomePageComponent,
+    AddStoreComponent
   ],
   imports: [
      BrowserModule,

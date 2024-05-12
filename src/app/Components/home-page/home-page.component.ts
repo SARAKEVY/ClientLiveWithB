@@ -17,43 +17,17 @@ export class HomePageComponent {
     categorieId: '',
     createdDate: new Date(),
     isShipping: false,
-    status: {
-      statusId: '',
-      type: '',
-      cellPlans: [],
-      locations: [],
-      products: [],
-      stores: [],
-      users: []
-    },
-    user: {
-      userId: '',
-      firstName: '',
-      lastName: '',
-      createdDate: new Date(),
-      email: '',
-      telephon: '',
-      isActive: false,
-      statusId: '',
-      status: {
-        statusId: '',
-        type: '',
-        cellPlans: [],
-        locations: [],
-        products: [],
-        stores: [],
-        users: []
-      },
-      cellPlanId: '',
-      isConfirmSms: false,
-      isConfirmEmail: false,
-      password: ''
-    },
-    categorie: {
-      categorieId: '',
-      nameCategorie: '',
-      isActive: false
-    },
+    // status: {
+    //   statusId: '',
+    //   type: '',
+
+    // },
+
+    // categorie: {
+    //   categorieId: '',
+    //   nameCategorie: '',
+    //   isActive: false
+    // },
 
     email: '',
     telephone: '',

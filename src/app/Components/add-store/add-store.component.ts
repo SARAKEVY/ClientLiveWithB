@@ -1,3 +1,4 @@
+import { Guid } from 'guid-typescript';
 import { Categorie } from 'src/app/MOdeles/Categorie.model';
 import { Status } from './../../MOdeles/Status.modele';
 import { HttpClient } from '@angular/common/http';
@@ -6,7 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Conection } from 'src/app/MOdeles/Conection.model';
 import { StoresService } from 'src/app/Services/stores.service';
 import { User } from 'src/app/MOdeles/User.model';
-import { Store } from 'src/app/MOdeles/Stores.model';
+import { Store } from 'src/app/MOdeles/Stores.model'
 
 @Component({
   selector: 'app-add-store',
@@ -23,49 +24,21 @@ user1:User[]=[]
   store: Store={
     name: '',
     logo: '',
-    statusId: '',
     description: '',
     userId: '',
     categorieId: '',
     createdDate: new Date(),
     isShipping: false,
-    status: {
-      statusId: '',
-      type: '',
-      cellPlans: [],
-      locations: [],
-      products: [],
-      stores: [],
-      users: []
-    },
-    user: {
-      userId: '',
-      firstName: '',
-      lastName: '',
-      createdDate: new Date(),
-      email: '',
-      telephon: '',
-      isActive: false,
-      statusId: '',
-      // status: {
-      //   statusId: '',
-      //   type: '',
-      //   cellPlans: [],
-      //   locations: [],
-      //   products: [],
-      //   stores: [],
-      //   users: []
-      // },
-      cellPlanId: '',
-      isConfirmSms: false,
-      isConfirmEmail: false,
-      password: ''
-    },
-    categorie: {
-      categorieId: '',
-      nameCategorie: '',
-      isActive: false
-    },
+    // status: {
+    //   statusId: '',
+    //   type: '',
+    // },
+
+    // categorie: {
+    //   categorieId: '',
+    //   nameCategorie: '',
+    //   isActive: false
+    // },
 
     email: '',
     telephone: '',
@@ -77,16 +50,13 @@ user1:User[]=[]
     familyDoor: '',
     floor: '',
     entrance: '',
-    street: ''
+    street: '',
+    statusId:  ''
   };
   selectStatus:Status={
     statusId: '',
     type: '',
-    cellPlans: [],
-    locations: [],
-    products: [],
-    stores: [],
-    users: []
+
   }
   selectCategorie: Categorie={
     categorieId: '',
@@ -122,12 +92,11 @@ user1:User[]=[]
     error:error=>{}
   })
 
-    this.http.get<User>('https://localhost:7169' + '/api/Users'+'/f0989879-e97a-417e-c6cf-08dc7f7d5804').subscribe({
+    this.http.get<User>('https://localhost:7169' + '/api/Users'+'/2269b7b9-5e3e-4e20-7614-08dc728bd60e').subscribe({
 
     next: res => {
         this.user1[0] = res;
         const inde=this.user1.length
-        this.store.user = this.user1[0];
         this.store.userId = this.user1[0].userId
         console.log("res")
         console.log(this.user1)
@@ -179,14 +148,14 @@ console.log("onSubmit")
 
 
 // ------------
-      this.store.categorie = this.selectCategorie;
+      // this.store.categorie = this.selectCategorie;
       this.store.categorieId = this.selectCategorie.categorieId;
       this.store.name="iglu"
 
       this.store.isConfirmEmail=true
       this.store.isConfirmSms=false
       this.store.city = "Tel-Hai"
-      this.store.status = this.selectStatus
+      // this.store.status = this.selectStatus
       this.store.statusId=this.selectStatus.statusId
       this.store.createdDate = new Date
       console.log("this.store")
