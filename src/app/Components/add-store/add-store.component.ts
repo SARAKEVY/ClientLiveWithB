@@ -1,10 +1,8 @@
-import { Guid } from 'guid-typescript';
 import { Categorie } from 'src/app/MOdeles/Categorie.model';
-import { Status } from './../../MOdeles/Status.modele';
+import { Status } from '../../MOdeles/Status.modele';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Conection } from 'src/app/MOdeles/Conection.model';
 import { StoresService } from 'src/app/Services/stores.service';
 import { User } from 'src/app/MOdeles/User.model';
 import { Store } from 'src/app/MOdeles/Stores.model'
@@ -63,14 +61,7 @@ user1:User[]=[]
     nameCategorie: '',
     isActive: false
   };
-  all:[]=[]
-  myConection: Conection={
-    email: '',
-    telephone: '',
-    secondTelephone: '',
-    isConfirmSms: false,
-    isConfirmEmail: false,
-  };
+
   connectionForm:any
 
   ngOnInit() {
@@ -105,17 +96,18 @@ user1:User[]=[]
   })
     // this.storesService.AddConection()
     this.connectionForm = this.formBuilder.group({
+      nameStore: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       telephone: ['', Validators.required],
       secondTelephone: [''],
       isConfirmSms: [false],
       isConfirmEmail: [false],
-      // city: ['', Validators.required],
-      // houseNumber: [''],
-      // familyDoor: [''],
-      // floor: [''],
-      // entrance: [''],
-      // street: ['']
+      city: ['', Validators.required],
+      houseNumber: [''],
+      familyDoor: [''],
+      floor: [''],
+      entrance: [''],
+      street: ['']
 
     });
     console.log(this.connectionForm);
@@ -137,27 +129,34 @@ user1:User[]=[]
 console.log("onSubmit")
     if (this.connectionForm.valid) {
       // Send POST request to backend API to create connection
-      this.myConection.email = this.connectionForm.value.email;
-      this.myConection.telephone = this.connectionForm.value.telephone;
-      this.myConection.isConfirmEmail = this.connectionForm.value.isConfirmEmail;
 
-      this.myConection.isConfirmSms = this.connectionForm.value.isConfirmSms;
-      this.myConection.secondTelephone = this.connectionForm.value.secondTelephone;
-
-      console.log(this.myConection);
 
 
 // ------------
       // this.store.categorie = this.selectCategorie;
-      this.store.categorieId = this.selectCategorie.categorieId;
-      this.store.name="iglu"
+      this.store.email = this.connectionForm.value.email;
+      this.store.telephone = this.connectionForm.value.telephone;
+      this.store.isConfirmEmail = this.connectionForm.value.isConfirmEmail;
 
-      this.store.isConfirmEmail=true
-      this.store.isConfirmSms=false
-      this.store.city = "Tel-Hai"
+      this.store.isConfirmSms = this.connectionForm.value.isConfirmSms;
+      this.store.secondTelephone = this.connectionForm.value.secondTelephone;
+
+      this.store.categorieId = this.selectCategorie.categorieId;
+      this.store.name= this.connectionForm.value.nameStore;
+
+
       // this.store.status = this.selectStatus
       this.store.statusId=this.selectStatus.statusId
       this.store.createdDate = new Date
+      this.store.city = this.connectionForm.value.city;
+      this.store.houseNumber = this.connectionForm.value.houseNumber;
+      this.store.familyDoor = this.connectionForm.value.familyDoor;
+      this.store.floor = this.connectionForm.value.floor;
+      this.store.entrance = this.connectionForm.value.entrance;
+      this.store.street = this.connectionForm.value.street;
+      this.store.entrance = this.connectionForm.value.entrance;
+      this.store.entrance = this.connectionForm.value.entrance;
+
       console.log("this.store")
       console.log(this.store)
 
@@ -166,18 +165,20 @@ console.log("onSubmit")
           .subscribe({
             next: response => {
               // Handle success
-              console.log('Connection created successfully:', response);
+              console.log('Store created successfully:', response);
               // Optionally, reset the form
               this.connectionForm.reset();
             }, error: error => {
               // Handle error
-              console.error('Error creating connection:', error);
+              console.error('Error creating store:', error);
 
             }
           });
     } else {
       this.connectionForm.markAllAsTouched();
       console.log("ffffffffff")
+      console.log(this.connectionForm.Validators)
+
 
 
 

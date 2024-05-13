@@ -23,7 +23,9 @@ export class StoresComponent {
   }
 
   ngOnInit():void {
-    this.storesService.getAllStores().subscribe(s => { this.stores = s, console.log(s) });
+    this.storesService.getAllStores().subscribe(s => { this.stores = s, console.log(s) }, error => {
+      console.log("error"+error)
+    });
     console.log("ssssssssss")
     this.storesService.getAllCategories().subscribe(s => { this.categories = s, console.log(s) });
 

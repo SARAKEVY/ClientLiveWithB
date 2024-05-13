@@ -1,6 +1,22 @@
-<p>add-store works!</p>
-<h4>Add Conection</h4>
+<div class="container"><h4>Add Store</h4>
 <form [formGroup]="connectionForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nameStore">Name Store:</label>
+    <input type="nameStore" id="nameStore" formControlName="nameStore">
+  </div>
+  Choose status :
+<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" >
+  <option *ngFor="let item of statuses" [value]="item.statusId">{{item.type}}</option>
+</select>
+<br>
+
+Choose categorie :
+
+<select [(ngModel)]="selectCategorie" (ngModelChange)="onSelect2($event)" >
+  <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
+</select>
+
+<br>
   <div>
     <label for="email">Email:</label>
     <input type="email" id="email" formControlName="email">
@@ -21,8 +37,8 @@
     <label for="isConfirmEmail">Confirm Email:</label>
     <input type="checkbox" id="isConfirmEmail" formControlName="isConfirmEmail">
   </div>
-  <!-- Address Fields -->
-  <!-- <div>
+<h4>Address Fields</h4>
+<div>
     <label for="city">City:</label>
     <input type="text" id="city" formControlName="city">
   </div>
@@ -45,27 +61,10 @@
   <div>
     <label for="street">Street:</label>
     <input type="text" id="street" formControlName="street">
-  </div> -->
-  <button type="submit">Submit</button>
+  </div>
+  <br>
+
+  <button class="btn btn-outline-success" type="submit">Submit</button>
 </form>
-Choose status :
-<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" >
-  <option *ngFor="let item of statuses" [value]="item.statusId">{{item.type}}</option>
-</select>
-<br>
-<br>
-Choose categorie :
 
-<select [(ngModel)]="selectCategorie" (ngModelChange)="onSelect2($event)" >
-  <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
-</select>
-<br>
-<br>
-<!-- Choose categories
-
-<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" >
-  <option *ngFor="let item of statuses" [value]="item.statusId">{{item.type}}</option>
-</select> -->
-<br>
-<br>
-<ul *ngFor="let c of all"><li>{{all}}</li></ul>
+</div>

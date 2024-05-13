@@ -13,11 +13,11 @@
 
 body {
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
   background: #23242a !important;
+  color: beige!important;
  }
 
  div.box {
@@ -66,16 +66,7 @@ body {
   }
 }
 
-form {
-  position: absolute;
-  inset: 2px;
-  background: #28292d;
-  padding: 50px 40px;
-  border-radius: 8px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-}
+
 
 h2 {
   color: #45f3ff;
