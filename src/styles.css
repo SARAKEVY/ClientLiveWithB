@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
 /* login style */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -13,14 +13,14 @@
 
 body {
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
   background: #23242a !important;
-}
+  color: beige!important;
+ }
 
-div.boxLogin {
+div.box {
   position: relative;
   min-width: 380px;
   height: 570px;
@@ -33,19 +33,28 @@ div.boxLogin {
   justify-content: center;
   align-items: center;
 }
-div.mboxLogin{
+div.Lbox{
+  height: 1700px !important;
+  width: 500px !important;
+}
+div.Lbox::before{
+max-height: 1700px  !important;
+max-width: 500px !important;
+}
+div.mbox{
   height: 420px !important;
 }
-.mboxLogin::before{
+div.mbox::before{
 height: 420px  !important;
 }
-div.sboxLogin{
+
+div.sbox{
   height: 350px !important;
 }
-.sboxLogin::before{
+div.sbox::before{
 height: 350px  !important;
 }
-.boxLogin::before {
+div.box::before {
   content: '';
   z-index: 1;
   position: absolute;
@@ -57,15 +66,14 @@ height: 350px  !important;
   background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
   animation: animate 6s linear infinite;
 }
-
-.boxLogin::after {
+div.box::after {
   content: '';
-  z-index: 1;
+  z-index: 1 ;
   position: absolute;
   top: -50%;
   left: -50%;
   width: 380px;
-  min-height: 420px;
+  height: 570px;
   transform-origin: bottom right;
   background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
   animation: animate 6s linear infinite;
@@ -82,15 +90,16 @@ height: 350px  !important;
   }
 }
 
-form {
-  position: absolute;
-  inset: 2px;
-  background: #28292d;
-  padding: 50px 40px;
-  border-radius: 8px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
+form 
+{
+	position: absolute;
+	inset: 2px;
+	background: #28292d;
+	padding: 50px 40px;
+	border-radius: 8px;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
 }
 
 form h2 {
@@ -106,6 +115,16 @@ form h2 {
   margin-top: 35px;
 }
 
+.Lbox >.inputBox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  background-color: blueviolet;
+}
+
+
 .inputBox input {
   position: relative;
   width: 100%;
@@ -120,7 +139,7 @@ form h2 {
   transition: 0.5s;
   z-index: 10;
 }
-
+.input-group>.form-select,
 .inputBox span {
   position: absolute;
   left: 0;
@@ -131,9 +150,22 @@ form h2 {
   letter-spacing: 0.05em;
   transition: 0.5s;
 }
-
+.input-group>.form-select {
+  	border:1px  #45f3ff ;
+   
+}
+.inputBox>option,
+.input-group>.form-select,
 .inputBox input:valid~span,
 .inputBox input:focus~span {
+  color: #45f3ff;
+  transform: translateX(0px) translateY(-34px);
+  font-size: 0.75em;
+}
+.inputBox>option,
+.input-group>.form-select
+{
+	background: #28292d !important;
   color: #45f3ff;
   transform: translateX(0px) translateY(-34px);
   font-size: 0.75em;
@@ -152,7 +184,7 @@ form h2 {
   pointer-events: none;
   z-index: 9;
 }
-
+.input-group>.form-select,
 .inputBox input:valid~i,
 .inputBox input:focus~i {
   height: 44px;
@@ -188,7 +220,18 @@ input[type="submit"] {
   width: 100px;
   margin-top: 10px;
 }
+form h4{
+  color: #45f3ff;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
 
 input[type="submit"]:active {
   opacity: 0.8;
+}
+.inputBox.checkbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

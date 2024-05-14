@@ -1,68 +1,131 @@
-<p>add-store works!</p>
-<h4>Add Conection</h4>
+<body>
+<div class="box Lbox">
 <form [formGroup]="connectionForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email">
-  </div>
-  <div>
-    <label for="telephone">Telephone:</label>
-    <input type="tel" id="telephone" formControlName="telephone">
-  </div>
-  <div>
-    <label for="secondTelephone">Second Telephone:</label>
-    <input type="tel" id="secondTelephone" formControlName="secondTelephone">
-  </div>
-  <div>
-    <label for="isConfirmSms">Confirm SMS:</label>
-    <input type="checkbox" id="isConfirmSms" formControlName="isConfirmSms">
-  </div>
-  <div>
-    <label for="isConfirmEmail">Confirm Email:</label>
-    <input type="checkbox" id="isConfirmEmail" formControlName="isConfirmEmail">
-  </div>
-  <!-- Address Fields -->
-  <!-- <div>
-    <label for="city">City:</label>
-    <input type="text" id="city" formControlName="city">
-  </div>
-  <div>
-    <label for="houseNumber">House Number:</label>
-    <input type="text" id="houseNumber" formControlName="houseNumber">
-  </div>
-  <div>
-    <label for="familyDoor">Family at the Door:</label>
-    <input type="text" id="familyDoor" formControlName="familyDoor">
-  </div>
-  <div>
-    <label for="floor">Floor:</label>
-    <input type="text" id="floor" formControlName="floor">
-  </div>
-  <div>
-    <label for="entrance">Entrance:</label>
-    <input type="text" id="entrance" formControlName="entrance">
-  </div>
-  <div>
-    <label for="street">Street:</label>
-    <input type="text" id="street" formControlName="street">
+  <h2>הוספת חנות </h2>
+  <!-- <div class="inputBox">
+    <input type="text" required="required"  name="username">
+    <span>שם משתמש (מייל)</span>
+    <i></i>
   </div> -->
+  <div class="inputBox">
+    <input type="nameStore" id="nameStore" required="required"  formControlName="nameStore">
+    <span>Name Store</span>
+    <i></i>
+  </div>
+  <br>
+  <div class="input-group mb-3 inputbox">
+    <select class="form-select" formControlName="selectStatuse" id="statuse" (change)="onSelect($event)">
+      <option selected>>בחר סטטוס</option>
+      <option *ngFor="let item of statuses" [value]="item.statusId"   >{{item.type}}</option>
+    </select>
+  </div>
+  <div class="input-group mb-3 inputbox">
+    <select class="form-select" formControlName="selectCategorie" id="categorie" (change)="onSelect2($event)">
+      <option selected>Choose category</option>
+      <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
+    </select>
+  </div>
+
+  <div class="inputBox">
+    <span>Email</span>
+    <input type="email" id="email" required="required"  formControlName="email">
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span>Telephone</span>
+    <input type="tel" id="telephone" required="required"  formControlName="telephone">
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span>Second Telephone:</span>
+    <input type="tel" id="secondTelephone" required="required"  formControlName="secondTelephone">
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span>Confirm SMS:</span>
+    <input type="checkbox" id="isConfirmSms" required="required"  formControlName="isConfirmSms">
+  </div>
+  <div class="inputBox checkbox d-flex"> 
+    <span class="p-2 w-100">Confirm Email:                 </span>
+    <input class="flex-shrink-1" type="checkbox" required="required"  id="isConfirmEmail" formControlName="isConfirmEmail">
+    
+  </div>
+  <br>
+<h4>~~Address Fields~~</h4>
+<div class="inputBox">
+    <span>City:</span>
+    <input type="text" id="city" formControlName="city" required="required" >
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span>House Number:</span>
+    <input type="text" id="houseNumber" formControlName="houseNumber" required="required" >
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span>Family at the Door:</span>
+    <input type="text" id="familyDoor" formControlName="familyDoor" required="required" >
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span>Floor:</span>
+    <input type="text" id="floor" formControlName="floor" required="required" >
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span for="entrance">Entrance:</span>
+    <input type="text" id="entrance" formControlName="entrance" required="required" >
+    <i></i>
+  </div>
+  <div class="inputBox">
+    <span for="street">Street:</span>
+    <input type="text" id="street" formControlName="street" required="required" >
+    <i></i>
+  </div>
+  <br>
+
   <button type="submit">Submit</button>
 </form>
-
-<button type="button" class="collapsible"
- (click)="active=!active">Open Collapsible</button>
-<div class="content"  >
-  <div *ngFor="let item of statuses"  >
-    {{ item.type }}
-  </div>
 </div>
+<!-- Choose status :
+<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" id="status"   >
+  <option *ngFor="let item of statuses" [value]="item.statusId"   >{{item.type}}</option>
+</select>
+<br> -->
 
+<!-- Choose categorie : -->
 
-<!-- <div class="selection-view">
-  <div class="scrollable-container">
-    <div *ngFor="let item of statuses"  >
-      {{ item.type }}
+<!-- <select [(ngModel)]="selectCategorie" (ngModelChange)="onSelect2($event)"  id="categorie"   >
+  <option *ngFor="let item of categories" [value]="item.categorieId" >{{item.nameCategorie}}</option>
+</select> -->
+
+<br>
+<div class="box sbox"><h4>Add Categorie of store</h4>
+  <form [formGroup]="connectionForm2" (ngSubmit)="onSubmit2()">
+    <div>
+      <label for="name">Name Categorie:</label>
+      <input type="name" id="name" formControlName="name">
     </div>
+
+  Choose Parent categorie :
+
+  <div>
+    <label for="categorie">Choose category:</label>
+    <select formControlName="selectCategorie" id="categorie" (change)="onSelectParentCaegorie($event)">
+      <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
+    </select>
   </div>
-</div> -->
-<ul *ngFor="let c of all"><li>{{c}}</li></ul>
+
+  <br>
+
+    <div>
+      <label for="isActive">isActive:</label>
+      <input type="checkbox" id="isActive" formControlName="isActive">
+    </div>
+  <br>
+
+    <button class="btn btn-outline-success" type="submit">Submit</button>
+  </form>
+
+  </div>
+</body>

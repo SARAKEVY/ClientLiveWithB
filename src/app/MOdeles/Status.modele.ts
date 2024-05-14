@@ -1,6 +1,7 @@
+import { Guid } from "guid-typescript";
 
 export interface Status{
-  id:string,
-  type: string,
-  cellplans:[]
+  statusId:string,
+  type: string
+
 }

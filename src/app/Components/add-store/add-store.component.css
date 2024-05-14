@@ -1,4 +1,4 @@
-.collapsible {
+/* .collapsible {
   background-color: #eee;
   color: #444;
   cursor: pointer;
@@ -14,9 +14,9 @@
 }
 
 /* Style the collapsible content. Note: hidden by default */
-.content {
+/* .content {
   padding: 0 18px;
   /* display: none; */
   /* overflow: hidden; */
-  background-color: #f1f1f1;
-}
+  /* background-color: #f1f1f1;
+}   */

@@ -6,9 +6,9 @@ export interface AddAddress{
    familyDoor: string,
    floor: string,
    entrance: string,
-   street: string,
-    conectionId: string,
-    conection:{}
+   street: string
+    // conectionId: string,
+    // conection:{}
 }
 
 

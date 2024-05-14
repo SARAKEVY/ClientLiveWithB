@@ -1,0 +1,19 @@
+
+.navbar{
+
+  color: aliceblue;
+}
+a{
+  color: aliceblue;
+}
+
+ .nav-link.active{
+  color: rgb(99, 109, 118);
+
+}
+.nav-link:focus{
+
+  color: rgb(99, 109, 118);
+
+}
+

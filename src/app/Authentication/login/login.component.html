@@ -1,5 +1,5 @@
 <body>
-  <div [ngClass]="{mboxLogin:!isLogUp}" class="boxLogin">
+  <div [ngClass]="{mbox:!isLogUp}" class="box">
     <form *ngIf="!isLogUp" autocomplete="off">
       <h2>התחברות</h2>
       <div class="inputBox">
@@ -7,6 +7,7 @@
         <span>שם משתמש (מייל)</span>
         <i></i>
       </div>
+      <br>
       <div class="inputBox">
         <input type="password" required="required" [(ngModel)]="UserNP.password" name="password" placeholder="Password">
         <span>סיסמא</span>

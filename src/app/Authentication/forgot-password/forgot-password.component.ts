@@ -7,13 +7,13 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
-  userName: string | undefined;
+  username: string | undefined;
   constructor(private authService: AuthService) { }
   ngOnInit(): void {
   }
   forgetPass() {
-    console.log(this.userName);
-    this.authService.forgotPassword(this.userName).subscribe(
+    console.log(this.username);
+    this.authService.forgotPassword(this.username).subscribe(
       (response: any) => console.log('Login successful', response),
       // Handle login error
       (error: any) => console.error('Login error ', error)
