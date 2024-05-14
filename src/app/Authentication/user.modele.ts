@@ -1,4 +1,7 @@
 import { Guid } from "guid-typescript";
+import { CellPlan } from "../MOdeles/cell-plan";
+import { Store } from "../MOdeles/Stores.model";
+import { Status } from "../MOdeles/status";
 
 // export interface IUser{
 // UserId:Guid|undefined,

@@ -10,7 +10,6 @@ export class User {
   this.lastName='';
   this.createdDate=new Date();
   this.email='';
-  this.telephon='';
   this.isActive=true;
   this.status=new Status();
   this.cellPlan=new CellPlan();

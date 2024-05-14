@@ -1,24 +1,49 @@
-
-
 <body>
-  <div class="box">
-    <form autocomplete="off">
+  <div [ngClass]="{mboxLogin:!isLogUp}" class="boxLogin">
+    <form *ngIf="!isLogUp" autocomplete="off">
       <h2>התחברות</h2>
       <div class="inputBox">
-        <input type="text" required="required" [(ngModel)]="username" name="username">
-        <span>Username</span>
+        <input type="text" required="required" [(ngModel)]="UserNP.username" name="username">
+        <span>שם משתמש (מייל)</span>
         <i></i>
       </div>
       <div class="inputBox">
-        <input type="password" required="required" [(ngModel)]="password" name="password" placeholder="Password">
-        <span>Password</span>
+        <input type="password" required="required" [(ngModel)]="UserNP.password" name="password" placeholder="Password">
+        <span>סיסמא</span>
         <i></i>
       </div>
       <div class="links">
-        <a href="#">שכחת סיסמא? </a>
-        <a href="#">משתמש חדש</a>
+        <a href="/forgotPassword">שכחת סיסמא? </a>
+        <label (click)="isLogUp=true">משתמש חדש</label>
       </div>
-      <input type="submit" (click)="login()" value="Login">
+      <input type="submit" (click)="login()" value="התחברות">
+    </form>
+    <form *ngIf="isLogUp" autocomplete="off">
+      <h2>רישום</h2>
+      <div class="inputBox">
+        <input type="text" required="required" [(ngModel)]="user.firstName" name="firstName">
+        <span>שם פרטי</span>
+        <i></i>
+      </div>
+      <div class="inputBox">
+        <input type="text" required="required" [(ngModel)]="user.lastName" name="lastName">
+        <span>משפחה</span>
+        <i></i>
+      </div>
+      <div class="inputBox">
+        <input type="text" required="required" [(ngModel)]="user.email" name="email">
+        <span>מייל</span>
+        <i></i>
+      </div>
+      <div class="inputBox">
+        <input type="password" required="required" [(ngModel)]="UserNP.password" name="password" placeholder="Password">
+        <span>סיסמא</span>
+        <i></i>
+      </div>
+      <div *ngIf="isLogUp" class="links">
+        <label (click)="isLogUp=false">להתחברות</label>
+      </div>
+      <input type="submit" (click)="logUP()" value="רישום">
     </form>
   </div>
 </body>
@@ -29,7 +54,7 @@
   <button type="submit">Login</button>
 </form>
  <form> -->
-  <!-- <div class="form-group">
+<!-- <div class="form-group">
     <label for="firstName">First Name:</label>
     <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName">
   </div>
@@ -62,7 +87,7 @@
     required>
 =======
   Additional fields like stores, cell plan, etc. can be added here -->
-  <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
+<!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
 <!-- </form> -->
 <!-- >>>>>>> origin/main
 

@@ -49,7 +49,8 @@
   <button type="submit">Submit</button>
 </form>
 
-<button type="button" class="collapsible" (onclick)="active=!active">Open Collapsible</button>
+<button type="button" class="collapsible"
+ (click)="active=!active">Open Collapsible</button>
 <div class="content"  >
   <div *ngFor="let item of statuses"  >
     {{ item.type }}
@@ -64,4 +65,4 @@
     </div>
   </div>
 </div> -->
-<ul *ngFor="let c of all"><li>{{all}}</li></ul>
+<ul *ngFor="let c of all"><li>{{c}}</li></ul>
