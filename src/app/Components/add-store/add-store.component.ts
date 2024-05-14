@@ -19,7 +19,7 @@ export class AddStoreComponent implements OnInit {
   addCategorie: AddCategorie = {
     nameCategorie: '',
     isActive: false,
-    parent: null
+    parentId: null
   }
   active: boolean = false
   statuses: Status[] = []
@@ -139,7 +139,7 @@ export class AddStoreComponent implements OnInit {
     let ParentCategorie:Categorie
     if (event.target){
     ParentCategorie = <Categorie>this.categories.find(c => c.categorieId ===categorieId);
-    this.addCategorie.parent = ParentCategorie}
+    this.addCategorie.parentId = categorieId}
      // throw new Error('Method not implemented.');
   }
   onSubmit(): void {

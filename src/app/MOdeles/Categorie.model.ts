@@ -9,7 +9,7 @@ export interface Categorie{
 export interface AddCategorie{
 
   nameCategorie:string,
-  parent:Categorie|null,
+  parentId:string|null,
   isActive: boolean
 
 }
