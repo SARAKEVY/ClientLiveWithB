@@ -4,18 +4,18 @@
     <label for="nameStore">Name Store:</label>
     <input type="nameStore" id="nameStore" formControlName="nameStore">
   </div>
-  Choose status :
-<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" >
-  <option *ngFor="let item of statuses" [value]="item.statusId">{{item.type}}</option>
-</select>
-<br>
-
-Choose categorie :
-
-<select [(ngModel)]="selectCategorie" (ngModelChange)="onSelect2($event)" >
-  <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
-</select>
-
+  <div>
+    <label for="categorie">Choose statuse:</label>
+    <select formControlName="selectStatuse" id="statuse" (change)="onSelect($event)">
+      <option *ngFor="let item of statuses" [value]="item.statusId"   >{{item.type}}</option>
+    </select>
+  </div>
+  <div>
+    <label for="categorie">Choose category:</label>
+    <select formControlName="selectCategorie" id="categorie" (change)="onSelect2($event)">
+      <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
+    </select>
+  </div>
 <br>
   <div>
     <label for="email">Email:</label>
@@ -66,5 +66,45 @@ Choose categorie :
 
   <button class="btn btn-outline-success" type="submit">Submit</button>
 </form>
-
 </div>
+<!-- Choose status :
+<select [(ngModel)]="selectStatus" (ngModelChange)="onSelect($event)" id="status"   >
+  <option *ngFor="let item of statuses" [value]="item.statusId"   >{{item.type}}</option>
+</select>
+<br> -->
+
+<!-- Choose categorie : -->
+
+<!-- <select [(ngModel)]="selectCategorie" (ngModelChange)="onSelect2($event)"  id="categorie"   >
+  <option *ngFor="let item of categories" [value]="item.categorieId" >{{item.nameCategorie}}</option>
+</select> -->
+
+
+<div class="container"><h4>Add Categorie of store</h4>
+  <form [formGroup]="connectionForm2" (ngSubmit)="onSubmit2()">
+    <div>
+      <label for="name">Name Categorie:</label>
+      <input type="name" id="name" formControlName="name">
+    </div>
+
+  Choose Parent categorie :
+
+  <div>
+    <label for="categorie">Choose category:</label>
+    <select formControlName="selectCategorie" id="categorie" (change)="onSelectParentCaegorie($event)">
+      <option *ngFor="let item of categories" [value]="item.categorieId">{{item.nameCategorie}}</option>
+    </select>
+  </div>
+
+  <br>
+
+    <div>
+      <label for="isActive">isActive:</label>
+      <input type="checkbox" id="isActive" formControlName="isActive">
+    </div>
+  <br>
+
+    <button class="btn btn-outline-success" type="submit">Submit</button>
+  </form>
+
+  </div>

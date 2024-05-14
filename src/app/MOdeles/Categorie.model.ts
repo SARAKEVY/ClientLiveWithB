@@ -5,4 +5,11 @@ export interface Categorie{
 
     isActive: boolean
 
-  }
+}
+export interface AddCategorie{
+
+  nameCategorie:string,
+  parent:Categorie|null,
+  isActive: boolean
+
+}
