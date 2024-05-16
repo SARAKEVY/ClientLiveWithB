@@ -12,15 +12,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    component:LoginComponent
+    component: LoginComponent
   },
   {
-    path:'forgotPassword',
-    component:ForgotPasswordComponent
+    path: 'forgotPassword',
+    component: ForgotPasswordComponent
   },
   {
     path: 'add-store',
-    component:AddStoreComponent
+    component: AddStoreComponent
   }
 ];
 

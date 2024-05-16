@@ -8,7 +8,7 @@ import { NamePassUser } from '../MOdeles/NamePassUser';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl = 'https://localhost:7169/api/Users/'
+  apiUrl = process.env["urlApi"]+'Users/';
   constructor(private http: HttpClient) { }
   forgotPassword(userName: string | undefined): Observable<any> {
     return this.http.get(this.apiUrl + 'forgotPassword?userName=' + userName);
