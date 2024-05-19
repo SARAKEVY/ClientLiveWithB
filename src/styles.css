@@ -8,20 +8,21 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 body {
   display: flex;
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
-  background: #23242a !important;
-  color: beige !important;
+  background: var(--bg) !important;
+  color: var(--color) !important;
 }
 
 div.box {
   position: relative;
   min-width: 380px;
   height: 570px;
-  background: #1c1c1c;
+  background: var(--bg2);
   border-radius: 8px;
   overflow: hidden;
   /*  */
@@ -33,12 +34,12 @@ div.box {
 
 div.Lbox {
   height: 1700px !important;
-  width: 500px !important;
+width: 1000px !important;
 }
 
 div.Lbox::before {
   max-height: 1700px !important;
-  max-width: 500px !important;
+ width: 1000px !important;
 }
 
 div.mbox {
@@ -66,7 +67,7 @@ div.box::before {
   width: 380px;
   height: 570px;
   transform-origin: bottom right;
-  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  background: linear-gradient(0deg, transparent, var(--primary-color), var(--primary-color));
   animation: animate 6s linear infinite;
 }
 
@@ -79,7 +80,7 @@ div.box::after {
   width: 380px;
   height: 570px;
   transform-origin: bottom right;
-  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  background: linear-gradient(0deg, transparent, var(--primary-color), var(--primary-color));
   animation: animate 6s linear infinite;
   animation-delay: -3s;
 }
@@ -97,7 +98,7 @@ div.box::after {
 form {
   position: absolute;
   inset: 2px;
-  background: #28292d;
+  background: var(--bg3);
   padding: 50px 40px;
   border-radius: 8px;
   z-index: 2;
@@ -106,7 +107,7 @@ form {
 }
 
 form h2 {
-  color: #45f3ff;
+  color: var(--primary-color);
   font-weight: 500;
   text-align: center;
   letter-spacing: 0.1em;
@@ -120,7 +121,7 @@ form h2 {
 
 .box.input-group.inputbox {
   width: 77%;
-  background: #8f8f8f;
+  background: var(--bginput);
   ;
 }
 
@@ -131,6 +132,7 @@ form h2 {
   display: flex;
   justify-content: space-between;
 }
+
 .inputBox input {
   position: relative;
   width: 100%;
@@ -139,7 +141,7 @@ form h2 {
   outline: none;
   box-shadow: none;
   border: none;
-  color: #23242a;
+  color: var(--bg3);
   font-size: 1em;
   letter-spacing: 0.05em;
   transition: 0.5s;
@@ -153,29 +155,29 @@ form h2 {
   padding: 20px 0px 10px;
   pointer-events: none;
   font-size: 1em;
-  color: #8f8f8f;
+  color: var('--bginput');
   letter-spacing: 0.05em;
   transition: 0.5s;
 }
 
 .input-group>.form-select {
-  border: 1px #45f3ff;
-
+  border: 1px var(--primary-color);
+  color: #f7f7fb;
 }
 
 .inputBox>option,
 .input-group>.form-select,
 .inputBox input:valid~span,
 .inputBox input:focus~span {
-  color: #45f3ff;
+  color: var(--primary-color);
   transform: translateX(0px) translateY(-34px);
   font-size: 0.75em;
 }
 
 .inputBox>option,
 .input-group>.form-select {
-  background: #28292d !important;
-  color: #45f3ff;
+  background: var(--bg3) !important;
+  color: var(--bg3);
   transform: translateX(0px) translateY(-34px);
   font-size: 0.75em;
 }
@@ -186,7 +188,7 @@ form h2 {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: #45f3ff;
+  background: var(--primary-color);
   border-radius: 4px;
   overflow: hidden;
   transition: 0.5s;
@@ -209,21 +211,21 @@ form h2 {
 .links label {
   margin: 10px 0;
   font-size: 0.75em;
-  color: #8f8f8f;
-  text-decoration: beige;
+  color: var(--bginput);
+  text-decoration: var(--color);
 }
 
 .links label:hover,
 .links a:hover,
 .links a:nth-child(2) {
-  color: #45f3ff;
+  color: var(--primary-color);
 }
 
 input[type="submit"] {
   border: none;
   outline: none;
   padding: 11px 25px;
-  background: #45f3ff;
+  background: var(--primary-color);
   cursor: pointer;
   border-radius: 4px;
   font-weight: 600;
@@ -232,7 +234,7 @@ input[type="submit"] {
 }
 
 form h4 {
-  color: #03818a;
+  color: var(--primary-color2);
   font-weight: 400;
   text-align: center;
   letter-spacing: 0.1em;
@@ -246,4 +248,8 @@ input[type="submit"]:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.mm {
+  color: #23242a;
 }

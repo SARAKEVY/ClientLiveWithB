@@ -4,6 +4,8 @@ import { StoresComponent } from './Components/stores/stores.component';
 import { LoginComponent } from './Authentication/login/login.component';
 import { AddStoreComponent } from './Components/add-store/add-store.component';
 import { ForgotPasswordComponent } from './Authentication/forgot-password/forgot-password.component';
+import { AuthGuard } from './Authentication/auth.guard';
+import { HomePageComponent } from './Components/home-page/home-page.component';
 
 const routes: Routes = [
   {
@@ -11,17 +13,19 @@ const routes: Routes = [
     component: StoresComponent
   },
   {
-    path: '',
-    component: LoginComponent
-  },
-  {
     path: 'forgotPassword',
     component: ForgotPasswordComponent
   },
   {
     path: 'add-store',
-    component: AddStoreComponent
-  }
+    component: AddStoreComponent,
+    canActivate:[AuthGuard]
+  },
+  { path: '', component:HomePageComponent, canActivate: [AuthGuard] },
+  // { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
+  // { path: 'account', loadChildren: accountModule },
+  { path: '**', redirectTo: '' }
+
 ];
 
 @NgModule({

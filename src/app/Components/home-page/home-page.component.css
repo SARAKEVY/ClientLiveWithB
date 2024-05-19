@@ -1,4 +1,22 @@
 
+
+.theme {
+  background-color: var(--bg);
+  padding: 40px;
+  h1 {
+      color: var(--color);
+      padding: 10px;
+      margin-bottom: 20px;
+  }
+  button {
+      background-color: transparent;
+      box-shadow: var(--shadow);
+      border: 1px groove var(--border-color);
+      color: var(--color);
+      padding: 5px 10px;
+      margin: 10px 20px;
+  }
+}
 .navbar{
 
   color: aliceblue;

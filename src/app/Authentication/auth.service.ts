@@ -1,15 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../MOdeles/user';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { NamePassUser } from '../MOdeles/NamePassUser';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private userSubject: BehaviorSubject<User|null>;
+  public user: Observable<User|null>;
+  public token?:string;
+
   apiUrl = process.env["urlApi"]+'Users/';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
+    this.user = this.userSubject.asObservable();
+  }
+  public get userValue() {
+    return this.userSubject.value;
+}
+
   forgotPassword(userName: string | undefined): Observable<any> {
     return this.http.get(this.apiUrl + 'forgotPassword?userName=' + userName);
   }
@@ -23,6 +35,9 @@ export class AuthService {
   // https://localhost:44355/api/Users/authenticate?username=%D7%A2%D7%A2%D7%98&password=67
   logout() {
     // Remove token from local storage or wherever it's stored
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
+    this.router.navigate(['/account/login']);
   }
   logUp(user: User) {
     return this.http.post(this.apiUrl +  'authenticate',user);
